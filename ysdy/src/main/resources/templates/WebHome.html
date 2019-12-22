@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>易搜都有</title>
+</head>
+
+<body>
+<div class="container">
+    <div onclick="KeFu()" class="call">客服<i></i></div>
+    <div class="search-main">
+        <a href="/WebReturn" class="return">
+            <i></i>
+        </a>
+        <div class="function">
+            <div class="search-left">
+                学习
+            </div>
+            <a href="/WebSelect" class="search-right">
+                搜索
+            </a>
+        </div>
+    </div>
+    <div class="result">
+        <ul>
+            <li><span>国 &nbsp;&nbsp;&nbsp; 家 ：</span><span id="lunbo_country1"></span></li>
+            <li><span>Country ：</span><span id="lunbo_country2"></span></li>
+            <li><span>首 &nbsp;&nbsp;&nbsp; 都 ：</span><span id="lunbo_captial1"></span></li>
+            <li><span>Capital ：</span><span id="lunbo_captial2"></span></li>
+        </ul>
+    </div>
+    <div class="button">
+        <div class="continue" onclick="start1()"><i></i></div>
+        <div class="stop" onclick="pause1()"><i></i></div>
+    </div>
+</div>
+</body>
+<script type='text/javascript' src='/js/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='/js/my.js' charset='utf-8'></script>
+</html>

@@ -1,0 +1,28 @@
+spring:
+  thymeleaf:
+    cache: false # 开发时关闭缓存,不然没法看到实时页面
+    mode: HTML # 用非严格的 HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  datasource:
+    druid:
+      url: jdbc:mysql://120.27.244.77:3306/cdt?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+      username: fuwuqi
+      password: fwq123456
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      # MySQL 8.x: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+    type-aliases-package: com.liangweifeng.ysdy.entity
+    mapper-locations: classpath:mapper/*.xml
+
+
+logging:
+  file: ../logs/spring-boot-hello.log
+  level.org.springframework.web: DEBUG
+

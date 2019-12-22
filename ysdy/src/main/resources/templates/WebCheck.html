@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/index2.css">
+    <title>易搜都有</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="search-main">
+            <a href="/WebReturnHome" class="return">
+                <i></i>
+            </a>
+            <div class="search">
+                <i></i><input type="text" id='search' placeholder="请输入要查询的国家或首都">
+            </div>
+            <div class="search-right" onclick="souSuo1()">
+                搜索
+            </div>
+        </div>
+        <p class="title">您所查找的结果如下</p>
+        <div class="result">
+            <ul>
+                <li><span>国 &nbsp;&nbsp;&nbsp; 家 ：</span><span id="country11"></span></li>
+                <li><span>Country ：</span><span id="country22"></span></li>
+                <li><span>首 &nbsp;&nbsp;&nbsp; 都 ：</span><span id="captial11"></span></li>
+                <li><span>Capital ：</span><span id="captial22"></span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type='text/javascript' src='/js/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='/js/my.js' charset='utf-8'></script>
+</html>
