@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangweifeng.ysdy.mapper.CountryCaptialDao">
+  <resultMap id="BaseResultMap" type="com.liangweifeng.ysdy.entity.CountryCaptial">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="country1" jdbcType="VARCHAR" property="country1" />
+    <result column="country2" jdbcType="VARCHAR" property="country2" />
+    <result column="captial1" jdbcType="VARCHAR" property="captial1" />
+    <result column="captial2" jdbcType="VARCHAR" property="captial2" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
+  </resultMap>
+
+  <insert id="insertCdt" parameterType="com.liangweifeng.ysdy.entity.CountryCaptial">
+    insert into country_captial (country1,country2,captial1,captial2)
+    values (#{countryCaptial.country1},#{countryCaptial.country2},#{countryCaptial.captial1},#{countryCaptial.captial2})
+  </insert>
+
+  <delete id="deleteCdt"  parameterType="com.liangweifeng.ysdy.entity.CountryCaptial">
+    delete from country_captial where country1=#{country1}
+  </delete>
+
+  <update id="updateCdt"  parameterType="com.liangweifeng.ysdy.entity.CountryCaptial">
+    update country_captial set
+    country1=#{country_captial.country1},
+    country2=#{country_captial.country2},
+    captial1=#{country_captial.capital1},
+    captial2=#{country_captial.captial2}
+    where country1=#{cdt.country1}
+  </update>
+
+  <select id="findCdt1" resultMap="BaseResultMap" parameterType="INTEGER">
+    select * from country_captial
+    <where>
+      country1=#{flag} or country2=#{flag} or captial1=#{flag} or captial2=#{flag}
+    </where>
+  </select>
+
+  <select id="findCdt2" resultMap="BaseResultMap" parameterType="INTEGER">
+    select * from country_captial
+  </select>
+
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liangweifeng.ysdy.mapper.AdDao">
+  <resultMap id="BaseResultMap" type="com.liangweifeng.ysdy.entity.Ad">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="A_id" jdbcType="VARCHAR" property="aId" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+
+  <select id="findpswAdByA_id" resultMap="BaseResultMap" parameterType="STRING">
+    select * from ad
+    <where>
+      A_id=#{A_id} and password=#{password}
+    </where>
+  </select>
+
+
+</mapper>

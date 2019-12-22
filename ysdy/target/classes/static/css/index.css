@@ -1,0 +1,265 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/font.eot?s7zepw');
+    src: url('../fonts/font.eot?s7zepw#iefix') format('embedded-opentype'), url('../fonts/font.ttf?s7zepw') format('truetype'), url('../fonts/font.woff?s7zepw') format('woff'), url('../fonts/font.svg?s7zepw#font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 750px;
+    height: 800px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.search-main {
+    display: flex;
+    height: 70px;
+}
+
+.return {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(56, 136, 255);
+    text-align: center;
+    margin: 10px 0 0 10px;
+    padding: 9px;
+    box-sizing: border-box;
+}
+
+.return:hover {
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.return i {
+    height: 36px;
+    line-height: 36px;
+    font-family: 'icomoon';
+    font-style: italic;
+    font-style: normal;
+    font-size: 45px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.function {
+    width: 200px;
+    height: 32px;
+    display: flex;
+    margin: 20px 0px 0px 215px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.search-left {
+    float: left;
+    display: block;
+    flex: 1;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(56, 136, 255);
+    font-size: 18px;
+    line-height: 30px;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.search-right {
+    display: block;
+    flex: 1;
+    height: 30px;
+    background-color: #f2f2f2;
+    color: rgb(56, 136, 255);
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.search-right:hover {
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgb(56, 136, 255);
+    color: #fff;
+}
+
+.call {
+    text-decoration: none;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    padding-left: 25px;
+    background-color: rgb(56, 136, 255);
+    box-sizing: border-box;
+}
+
+.call i {
+    position: absolute;
+    top: -3px;
+    left: 5px;
+    height: 36px;
+    line-height: 36px;
+    font-family: 'icomoon';
+    font-style: italic;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.result {
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: 600;
+    color: silver;
+}
+
+ul {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ul li {
+    list-style: none;
+    box-sizing: border-box;
+    border: 1px solid rgb(201, 190, 190);
+    height: 60px;
+    width: 480px;
+    line-height: 60px;
+    font-size: 18px;
+    margin-top: -1px;
+    overflow: hidden;
+}
+
+ul li:nth-child(1) {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+ul li:nth-child(4) {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+ul li:nth-child(2n+1) {
+    background-color: rgb(158, 212, 233);
+}
+
+li span:nth-child(1) {
+    display: inline-block;
+    width: 100px;
+    text-align: end;
+    /* border-right: 1px solid #ccc; */
+}
+
+li span:nth-child(2) {
+    padding-left: 20px;
+    text-align: start;
+}
+
+.button {
+    position: relative;
+}
+
+.continue {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgb(56, 136, 255);
+    position: absolute;
+    top: 335px;
+    left: 180px;
+}
+
+.continue i {
+    position: absolute;
+    top: 30px;
+    left: 26px;
+    height: 36px;
+    line-height: 36px;
+    font-family: 'icomoon';
+    font-style: italic;
+    font-style: normal;
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.continue:hover {
+    cursor: pointer;
+    animation: continue 0.25s linear;
+}
+
+@keyframes continue {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.stop {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgb(56, 136, 255);
+    position: absolute;
+    top: 333px;
+    right: 180px;
+}
+
+.stop i {
+    position: absolute;
+    top: 32px;
+    left: 21px;
+    height: 36px;
+    line-height: 36px;
+    font-family: 'icomoon';
+    font-style: italic;
+    font-style: normal;
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.stop:hover {
+    cursor: pointer;
+    animation: stop 0.25s linear;
+}
+
+@keyframes stop {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>易首都有主页面</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="/css/sm.min.css">
+    <link rel="stylesheet" href="/css/sm-extend.min.css">
+
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('/fonts/icomoon.eot?efcx05');
+            src: url('/fonts/icomoon.eot?efcx05#iefix') format('embedded-opentype'), url('../static/fonts/icomoon.ttf?efcx05') format('truetype'), url('/fonts/icomoon.woff?efcx05') format('woff'), url('/fonts/icomoon.svg?efcx05#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        span {
+            font-family: 'icomoon';
+            font-size: 0.77rem;
+        }
+
+        .list-block {
+            margin-top: 5.5rem;
+        }
+
+        .start,
+        .pause {
+            position: absolute;
+            height: 3.5rem;
+            width: 3.5rem;
+            background-color: rgb(8, 148, 236);
+            color: white;
+            line-height: 3.5rem;
+            text-align: center;
+            border-radius: 50%;
+            bottom: 3rem;
+
+        }
+
+        .start {
+            left: 25%;
+            transform: translateX(-50%);
+        }
+
+        .pause {
+            left: 75%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+
+        .start:hover {
+            animation: guodu 0.5s;
+            cursor: pointer;
+        }
+
+        .pause:hover {
+            animation: guodu 0.3s linear;
+        }
+
+        @keyframes guodu {
+            0% {
+
+                opacity: 1;
+            }
+            50% {
+
+                opacity: 0.5;
+            }
+            100% {
+
+                opacity: 1;
+            }
+        }
+
+        .ziti {
+            display: block;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .bar .bar-nav {
+            position: relative !important;
+        }
+
+        .searchbar {
+            position: relative !important;
+
+        }
+
+        /*  登陆页面 */
+        .top_images {
+            height: 6rem;
+            width: 100%;
+            background-size: cover !important;
+            background: url(/images/login.png) no-repeat;
+            background-size: 19rem auto;
+            background-position: 0 -2rem;
+        }
+
+        .list-block {
+            margin-top: 0rem;
+        }
+
+        .list-block ul li:first-child {
+            border-bottom: 0.05rem solid #e5e5e5;
+        }
+
+        .button-danger {
+            background-color: rgb(239, 239, 244) !important;
+            color: rgb(8, 148, 236) !important;
+            border: 0.05rem solid rgb(8, 148, 236) !important;
+        }
+
+        .button-success {
+            background-color: rgb(8, 148, 236) !important;
+            color: white !important;
+            border: 0.05rem solid rgb(8, 148, 236) !important;
+        }
+
+        .list-block .item-title.label {
+            width: 23%;
+        }
+
+        .button.button-fill.button-big {
+            line-height: 2rem;
+        }
+
+        .button.button-big {
+            height: 2rem;
+        }
+
+        /*客服界面*/
+        h3 {
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) !important;
+            top: 40%;
+            font-size: 18px;
+            line-height: 1.5rem;
+        }
+
+        h3 a {
+            color: rgb(8, 148, 236);
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="page-group">
+    <!--登陆页面-->
+    <div class="page page-current" id='router0'>
+        <header class="bar bar-nav">
+            <h1 class="title">账号登陆</h1>
+        </header>
+
+
+        <div class="content">
+            <!-- 这里是页面内容区 -->
+            <div class="top_images"></div>
+            <form name="form" accept-charset="utf-8" action="/AppPost" method="post">
+                <!-- 输入账号密码 -->
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">账号</div>
+                                    <div class="item-input">
+                                        <input type="text" name="A_id" placeholder="请输入账号">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">密码</div>
+                                    <div class="item-input">
+                                        <input type="password" name="password" placeholder="请输入密码" class="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 提交按钮 -->
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50"><a href="#router1"
+                                               class="button button-big button-fill button-danger">游客模式</a></div>
+                        <div class="col-50"><input type="submit" value="确认登陆"
+                                                   class="button button-big button-fill button-success"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--内容 -->
+    <div class="page" id='router1'>
+
+        <header class="bar bar-nav">
+            <a href="#router0" class="button button-link button-nav pull-left"><span></span></a>
+            <h1 class="title">易搜都有</h1>
+        </header>
+        <nav class="bar bar-tab">
+            <a class="tab-item active">
+                <span></span>
+                <br/>
+                <span class="tab-label">学习</span>
+            </a>
+            <a class="tab-item" href="#router3">
+                <span></span>
+                <br/>
+                <span class="tab-label">客服</span>
+            </a>
+        </nav>
+        <div class="content">
+            <!-- 这里是页面内容区 -->
+            <!-- 搜索框 -->
+            <div class="searchbar row">
+                <div class="search-input col-85">
+                    <input type="search" id='search' placeholder='输入关键字...'/>
+                </div>
+                <a href="#router2" class="button button-link button-fill button-primary col-15"
+                   onclick="souSuo()"><span></span></a>
+            </div>
+            <!-- 轮播内容 -->
+            <div class="list-block">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">国家</div>
+                            <div class="item-after" id="lunbo_country1"></div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Country</div>
+                            <div class="item-after" id="lunbo_country2"></div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">首都</div>
+                            <div class="item-after" id="lunbo_captial1"></div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Captial</div>
+                            <div class="item-after" id="lunbo_captial2"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pause" onclick="pause1()"><span class="ziti"></span></div>
+            <div class="start" onclick="start1()"><span class="ziti" style="margin-left: 0.5rem;"></span></div>
+        </div>
+    </div>
+
+    <!--查询结果-->
+    <div class="page" id="router2">
+        <header class="bar bar-nav">
+            <a href="#router1" class="button button-link button-nav pull-left"><span></span></a>
+            <h1 class="title">易搜都有</h1>
+        </header>
+        <div class="content">
+            <!-- 这里是页面内容区 -->
+            <!-- 查询的内容 -->
+            <div class="list-block">
+                <ul>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">国家</div>
+                            <div class="item-after" id="country11"></div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Country</div>
+                            <div class="item-after" id="country22"></div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">首都</div>
+                            <div class="item-after" id="captial11"></div>
+                        </div>
+                    </li>
+                    <li class="item-content">
+                        <div class="item-media"><i class="icon icon-f7"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title">Captial</div>
+                            <div class="item-after" id="captial22"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--客服界面-->
+    <div class="page" id="router3">
+        <header class="bar bar-nav">
+            <h1 class="title">易搜都有</h1>
+        </header>
+        <nav class="bar bar-tab">
+            <a class="tab-item" href="#router1">
+                <span></span>
+                <br/>
+                <span class="tab-label">学习</span>
+            </a>
+            <a class="tab-item active" href="#">
+                <span></span>
+                <br/>
+                <span class="tab-label">客服</span>
+            </a>
+        </nav>
+        <div class="content">
+            <!-- 这里是页面内容区 -->
+
+            <h3 class="kefu33">如果您有疑问，请致电<br>
+                <a href="tel:18318684040"><span></span>18318684040</a>
+            </h3>
+
+        </div>
+    </div>
+
+    <!--管理员页面-->
+
+</div>
+
+<script type='text/javascript' src='/js/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='/js/my.js' charset='utf-8'></script>
+<script>
+    $.init()
+</script>
+</body>
+
+</html>
